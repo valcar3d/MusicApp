@@ -1,6 +1,7 @@
 package com.dimensiva.musicapp.database
 
 import android.content.Context
+import android.net.Uri
 import android.widget.ImageView
 import androidx.room.Database
 import androidx.room.Room
@@ -41,16 +42,6 @@ abstract class AppDatabase : RoomDatabase() {
             }
         }
 
-        fun populateDatabase(userDao: UserAccountDao) {
-            // Start the app with a clean database every time.
-            // Not needed if you only populate on creation.
-            var user = UserAccount(
-                0, "valcar", "angel pat oribe",
-                "programador android", R.drawable.image
-            )
-            userDao.insert(user)
-
-        }
     }
 
 }

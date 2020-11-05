@@ -1,13 +1,13 @@
 package com.dimensiva.musicapp.entity
 
-import android.widget.ImageView
+import android.net.Uri
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "user_accounts")
 data class UserAccount(
     @PrimaryKey(autoGenerate = true) val id: Int,
-    val nickName: String,
-    val nombreYapellido: String, val descripcion: String,
-    val perfilImagen: Int
+    var nickName: String,
+    var nombreYapellido: String, var descripcion: String,
+    var perfilImagen: Int
 )

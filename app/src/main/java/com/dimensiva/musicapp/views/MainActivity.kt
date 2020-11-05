@@ -37,10 +37,11 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
 
+
         userViewModel.insert(
             UserAccount(
-                0,
-                "valcar",
+                1,
+                "valcar3d",
                 "angel pat",
                 "android programmer",
                 R.id.musicIcon
@@ -53,12 +54,17 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         var navDescription: MenuItem = menu.findItem(R.id.navDescription)
 
 
-
         userViewModel.allUsers.observe(
             this, { users ->
-                navName.title = users[0].nickName
-                navFullName.title = users[0].nombreYapellido
-                navDescription.title = users[0].descripcion
+                var fullSize = users.size
+
+                if (fullSize > 0) {
+                    println("Users = ${users.toString()}")
+                    navName.title = users[fullSize - 1].nickName
+                    navFullName.title = users[fullSize - 1].nombreYapellido
+                    navDescription.title = users[fullSize - 1].descripcion
+                }
+
             }
         )
 
