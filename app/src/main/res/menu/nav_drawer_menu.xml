@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu  xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navName"
+        android:title="Nombre de usuario" />
+
+    <item
+        android:id="@+id/navFullName"
+        android:title="Nombre y apellido" />
+
+    <item
+        android:id="@+id/navDescription"
+        android:title="Descripción" />
+    <item
+        android:id="@+id/editProfile"
+        android:title="Editar perfil" />
+
+
+</menu>

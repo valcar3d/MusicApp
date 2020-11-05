@@ -18,8 +18,6 @@ class MusicFragment : Fragment() {
     private lateinit var mp: MediaPlayer
     private var totalTime: Int = 0
 
-    //private var _binding: FragmentMusicBinding? = null
-    //private val binding get() = _binding!!
 
     private lateinit var binding: FragmentMusicBinding
 
@@ -153,19 +151,6 @@ class MusicFragment : Fragment() {
         return timeLabel
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        if (mp.isPlaying) {
-            // Stop
-            mp.pause()
-            binding.playBtn.setBackgroundResource(R.drawable.play)
-
-        } else {
-            // Start
-            mp.start()
-            binding.playBtn.setBackgroundResource(R.drawable.stop)
-        }
-    }
 
 
 

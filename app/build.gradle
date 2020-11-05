@@ -5,6 +5,8 @@ plugins {
 }
 
 android {
+
+
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
@@ -44,9 +46,10 @@ android {
         jvmTarget = '1.8'
     }
 
-    dataBinding{
+    dataBinding {
         enabled = true
     }
+
 }
 
 dependencies {
@@ -63,9 +66,27 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     compileOnly 'com.google.android.wearable:wearable:2.8.1'
 
+    //Material design navdrawer
     implementation "com.google.android.material:material:1.3.0-alpha03"
 
+    //Circular image
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    // Room
+    implementation "androidx.room:room-ktx:2.2.5"
+    kapt "androidx.room:room-compiler:2.2.5"
+    androidTestImplementation "androidx.room:room-testing:2.2.5"
 
 
+
+    // Lifecycle components
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-common-java8:2.2.0"
+
+
+    //SweetAlert Dialog
+    implementation 'com.github.f0ris.sweetalert:library:1.5.6'
     kapt 'com.android.databinding:compiler:3.1.4'
+
 }
