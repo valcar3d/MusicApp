@@ -89,4 +89,8 @@ dependencies {
     implementation 'com.github.f0ris.sweetalert:library:1.5.6'
     kapt 'com.android.databinding:compiler:3.1.4'
 
+
+    //Lottie
+    implementation 'com.airbnb.android:lottie:3.4.4'
+
 }

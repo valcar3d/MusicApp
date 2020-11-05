@@ -40,8 +40,9 @@ class MusicFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         mp = MediaPlayer.create(activity, R.raw.music)
-        mp.isLooping = true
+        mp.isLooping = false
         mp.setVolume(0.5f, 0.5f)
         totalTime = mp.duration
 
@@ -72,6 +73,7 @@ class MusicFragment : Fragment() {
         // Position Bar
         binding.apply {
             positionBar.max = totalTime
+
             positionBar.setOnSeekBarChangeListener(
                 object : SeekBar.OnSeekBarChangeListener {
                     override fun onProgressChanged(
@@ -105,8 +107,10 @@ class MusicFragment : Fragment() {
                 var elapsedTime = createTimeLabel(currentPosition)
                 binding.elapsedTimeLabel.text = elapsedTime
 
+
                 var remainingTime = createTimeLabel(totalTime - currentPosition)
                 binding.remainingTimeLabel.text = "-$remainingTime"
+
             }
         }
 
@@ -127,11 +131,13 @@ class MusicFragment : Fragment() {
         binding.playBtn.setOnClickListener {
             if (mp.isPlaying) {
                 // Stop
+                binding.animationView.pauseAnimation()
                 mp.pause()
                 binding.playBtn.setBackgroundResource(R.drawable.play)
 
             } else {
                 // Start
+                binding.animationView.playAnimation()
                 mp.start()
                 binding.playBtn.setBackgroundResource(R.drawable.stop)
             }
@@ -150,9 +156,6 @@ class MusicFragment : Fragment() {
 
         return timeLabel
     }
-
-
-
 
 
 }
